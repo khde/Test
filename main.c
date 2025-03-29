@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <unistd.h>
 
 int main(void) {
-    printf("Hello World!\n");
+    write(STDOUT_FILENO, "Hello World!\n", 13);
 
     return 0;
 }
