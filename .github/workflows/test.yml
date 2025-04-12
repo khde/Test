@@ -17,5 +17,5 @@ jobs:
               run: pip install -r requirements.txt
             - name: Run tests
               run: |
-                  pytest --tb=no tests/ | tee result.txt
+                  pytest --tb=no --no-header tests/ | tee result.txt
                   cat result.txt >> $GITHUB_STEP_SUMMARY
