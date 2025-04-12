@@ -16,4 +16,6 @@ jobs:
             - name: Install dependencies
               run: pip install -r requirements.txt
             - name: Run tests
-              run: pytest --tb=no tests/
+              run: |
+                  pytest --tb=no tests/ | tee result.txt
+                  cat result.txt >> $GITHUB_STEP_SUMMARY
